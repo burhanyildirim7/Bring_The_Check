@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     {
         LevelStart();
 
-        _uiController = GameObject.Find("UIController").GetComponent<UIController>();
+        //_uiController = GameObject.Find("UIController").GetComponent<UIController>();
 
     }
 
@@ -42,12 +42,10 @@ public class PlayerController : MonoBehaviour
             _elmasSayisi += 1;
             _toplananElmasSayisi += 1;
             PlayerPrefs.SetInt("ElmasSayisi", _elmasSayisi);
+            TicketManager.instance.IncreaseTicketCount();
             Destroy(other.gameObject);
         }
-        else
-        {
 
-        }
     }
 
     private void WinScreenAc()

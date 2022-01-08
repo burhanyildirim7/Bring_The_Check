@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
     
     void Start()
     {
-        _oyunAktif = false;
+        _oyunAktif = true;
 
     }
 
