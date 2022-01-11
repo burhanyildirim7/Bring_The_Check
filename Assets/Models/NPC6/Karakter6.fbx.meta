@@ -1,11 +1,41 @@
 fileFormatVersion: 2
-guid: cc735d6423936064ca1b49562bb038a9
+guid: 4e6950cd815e98441a760f881d3b873a
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
   - first:
-      74: 1827226128182048838
-    second: Take 001
+      74: 5838897907018180914
+    second: Origin|Origin|Take 001|Layer0
+  - first:
+      74: -7474177132792664798
+    second: Origin|Origin|Take 001|Layer0.001
+  - first:
+      74: -4791504522942941401
+    second: Armature|Armature|mixamo.com|Layer0
+  - first:
+      74: 5313836513155634284
+    second: Armature|Armature|Take 001|Layer0
+  - first:
+      74: -3319860693199693487
+    second: Armature|Armature|Take 001|Layer0.001
+  - first:
+      74: 7291322076297701116
+    second: Armature|ayakta
+  - first:
+      74: -6229222157533002790
+    second: Armature|Origin|Take 001|Layer0
+  - first:
+      74: -6026658877565531643
+    second: Armature|Origin|Take 001|Layer0.001
+  - first:
+      74: -3818674015378702788
+    second: Armature|oturarak
+  - first:
+      74: -6742234404234473752
+    second: Armature|ayaktaUzun
+  - first:
+      74: 1807332357951408920
+    second: Armature|oturarakUzun
   externalObjects: {}
   materials:
     materialImportMode: 2
