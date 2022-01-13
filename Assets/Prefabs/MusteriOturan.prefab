@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8965015223662184525}
   m_Layer: 0
   m_Name: MusteriOturan
-  m_TagString: Untagged
+  m_TagString: Elmas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
