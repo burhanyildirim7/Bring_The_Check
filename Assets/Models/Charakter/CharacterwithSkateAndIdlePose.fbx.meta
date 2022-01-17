@@ -1,11 +1,20 @@
 fileFormatVersion: 2
-guid: 813cbb65aad830745b8bdf3192a0f355
+guid: d5b11ce6a4e251b41a9f0a996d3e04d3
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
   - first:
-      74: 1827226128182048838
-    second: Take 001
+      74: 6490626688028179816
+    second: root|PoseKolSabit
+  - first:
+      74: 5854790925331053288
+    second: root|root|Take 001|BaseLayer
+  - first:
+      74: -4027537102440192131
+    second: root|SkateAnim
+  - first:
+      74: 1461286177571455675
+    second: root|skateAnimKolSabit
   externalObjects: {}
   materials:
     materialImportMode: 2

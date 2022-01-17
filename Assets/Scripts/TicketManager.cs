@@ -18,7 +18,7 @@ public class TicketManager : MonoBehaviour
 	public void IncreaseTicketCount()
 	{
 		ticketCount++;
-		if(ticketCount < 15)
+		if(ticketCount < 14)
 		{
 			Tickets[ticketCount - 1].gameObject.SetActive(false);
 			Tickets[ticketCount].gameObject.SetActive(true);

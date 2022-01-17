@@ -5,124 +5,102 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
-    [SerializeField] private GameObject _tapToStartPanel;
-    [SerializeField] private GameObject _gameScreenPanel;
-    [SerializeField] private GameObject _winScreenPanel;
-    [SerializeField] private GameObject _loseScreenPanel;
-
-    [SerializeField] private Text _levelText;
-    [SerializeField] private Text _elmasText;
-    [SerializeField] private Text _winElmasText;
-    [SerializeField] private Text _loseElmasText;
-    [SerializeField] private Text _tapToStartElmasText;
-
-    private int _levelNumber;
-
-    private int _elmasSayisi;
-
-    private PlayerController _playerController;
-
-    private LevelController _levelController;
-
-    private int _levelSonuElmasSayisi;
-
-    private int _oyunBasladi;
-
-    void Start()
-    {
-        _tapToStartPanel.SetActive(true);
-
-        _levelNumber = PlayerPrefs.GetInt("LevelNumber");
-
-        _oyunBasladi = PlayerPrefs.GetInt("OyunBasladi");
-        if (_oyunBasladi == 0)
-        {
-            PlayerPrefs.SetInt("LevelNumber", 1);
-            _oyunBasladi = 1;
-            PlayerPrefs.SetInt("OyunBasladi", _oyunBasladi);
-        }
-        else
-        {
-
-        }
-
-        _elmasSayisi = PlayerPrefs.GetInt("ElmasSayisi");
-
-        _playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-
-        _levelController = GameObject.Find("LevelController").GetComponent<LevelController>();
-
-        _tapToStartElmasText.text = _elmasSayisi.ToString();
+	public static UIController instance;
+	public GameObject TapToStartPanel, LoosePanel, GamePanel, WinPanel;
+	public  Text  gamePlayScoreText, winScreenScoreText, levelNoText;
 
 
-    }
 
-  
-    void Update()
-    {
-        _levelNumber = PlayerPrefs.GetInt("LevelNumber");
+	private void Awake()
+	{
+		if (instance == null) instance = this;
+		else Destroy(this);
+	}
 
-        _elmasSayisi = PlayerPrefs.GetInt("ElmasSayisi");
+	private void Start()
+	{
+		StartUI();
+	}
 
-       
-        _levelText.text = "LEVEL " + (_levelNumber);
-        
-        
-        _elmasText.text = _elmasSayisi.ToString();
-    }
+	public void StartUI()
+	{
+		TapToStartPanel.SetActive(true);
+		LoosePanel.SetActive(false);
+		GamePanel.SetActive(false);
+	}
 
-    public void TaptoStartPanelClose()
-    {
-        GameController._oyunAktif = true;
-        _tapToStartPanel.SetActive(false);
-        _gameScreenPanel.SetActive(true);
-    }
+	public void SetLevelText(int levelNo)
+	{
+		levelNoText.text = "Level " + levelNo.ToString();
+	}
 
-    public void WinScreenPanelOpen()
-    {
-        _gameScreenPanel.SetActive(false);
-        _winScreenPanel.SetActive(true);
-        _winElmasText.text = _levelSonuElmasSayisi.ToString();
-    }
+	// TAPTOSTART TU?UNA BASILDI?INDA  --- G?R?? EKRANINDA VE LEVEL BA?LARINDA
+	public void TapToStartButtonClick()
+	{
 
-    public void LoseScreenPanelOpen()
-    {
-        _gameScreenPanel.SetActive(false);
-        _loseScreenPanel.SetActive(true);
-        _loseElmasText.text = _levelSonuElmasSayisi.ToString();
-    }
+		GameManager.instance.isContinue = true;
+		//PlayerController.instance.SetArmForGaming();
+		TapToStartPanel.SetActive(false);
+		GamePanel.SetActive(true);
+		PlayerController.instance.PlayerSkateAnim();
+		SetLevelText(LevelController.instance.totalLevelNo);
 
-    public void NextLevelButton()
-    {
-        GameController._oyunAktif = false;
-        _winScreenPanel.SetActive(false);
-        _loseScreenPanel.SetActive(false);
-        _tapToStartPanel.SetActive(true);
-        _elmasSayisi = _elmasSayisi + _levelSonuElmasSayisi;
-        PlayerPrefs.SetInt("ElmasSayisi", _elmasSayisi);
-        _tapToStartElmasText.text = _elmasSayisi.ToString();
-        _levelController.LevelDegistir();
-        _playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-        _playerController.LevelStart();
-    }
+	}
 
-    public void LevelSonuElmasSayisi(int deger)
-    {
-        _levelSonuElmasSayisi = deger;
-    }
+	// RESTART TU?UNA BASILDI?INDA  --- LOOSE EKRANINDA
+	public void RestartButtonClick()
+	{
+		GamePanel.SetActive(false);
+		LoosePanel.SetActive(false);
+		TapToStartPanel.SetActive(true);
+		LevelController.instance.RestartLevelEvents();
+	}
 
-    public void LevelRestartButton()
-    {
-        GameController._oyunAktif = false;
-        _winScreenPanel.SetActive(false);
-        _loseScreenPanel.SetActive(false);
-        _tapToStartPanel.SetActive(true);
-        _elmasSayisi = _elmasSayisi + _levelSonuElmasSayisi;
-        PlayerPrefs.SetInt("ElmasSayisi", _elmasSayisi);
-        _tapToStartElmasText.text = _elmasSayisi.ToString();
-        _levelController.LevelRestart();
-        _playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-        _playerController.LevelStart();
-    }
+
+	// NEXT LEVEL TU?UNA BASILDI?INDA  --- W?N EKRANINDA
+	public void NextLevelButtonClick()
+	{
+		TapToStartPanel.SetActive(true);
+		WinPanel.SetActive(false);
+		GamePanel.SetActive(false);
+		LevelController.instance.NextLevelEvents();
+	}
+
+
+	public void SetScoreText()
+	{
+		gamePlayScoreText.text = GameManager.instance.score.ToString();
+	}
+
+	public void WinScreenScore()
+	{
+		winScreenScoreText.text = GameManager.instance.score.ToString();
+	}
+
+	public void ActivateWinScreen()
+	{
+		GamePanel.SetActive(false);
+		WinPanel.SetActive(true);
+		WinScreenScore();
+	}
+
+	public void ActivateLooseScreen()
+	{
+		GamePanel.SetActive(false);
+		LoosePanel.SetActive(true);
+	}
+
+	public void ActivateGameScreen()
+	{
+		GamePanel.SetActive(true);
+		TapToStartPanel.SetActive(false);
+	}
+
+	public void ActivateTapToStartScreen()
+	{
+		TapToStartPanel.SetActive(false);
+		WinPanel.SetActive(false);
+		LoosePanel.SetActive(false);
+	}
 
 }

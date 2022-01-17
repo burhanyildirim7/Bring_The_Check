@@ -1913,14 +1913,14 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  Gravity: {x: 0, y: 0, z: 0}
+  Gravity: {x: 0, y: -0.5, z: 0}
   UseWaving: 1
   CosinusAdd: 0
   FixedCycle: 0
   WavingSpeed: 3
-  WavingRange: 0.5
+  WavingRange: 0.8
   WavingAxis: {x: 1, y: 1, z: 1}
-  WavingType: 1
+  WavingType: 0
   AlternateWave: 5
   UseWind: 0
   WindEffectPower: 1
@@ -2440,21 +2440,21 @@ MonoBehaviour:
   AnimatePhysics: 0
   InterpolateRate: 0
   Prewarm: 0
-  Slithery: 1.2
-  Curling: 0.08
+  Slithery: 0.86
+  Curling: 0.34
   Springiness: 0
   MaxStretching: 0
   AngleLimit: 181
   AngleLimitAxis: {x: 0, y: 0, z: 0}
   LimitAxisRange: {x: 0, y: 0}
   LimitSmoothing: 0.15
-  MotionInfluence: 1
+  MotionInfluence: 0.7631579
   MotionInfluenceInY: 1
   IncludeParent: 1
   UnifyBendiness: 0
-  ReactionSpeed: 0.35
+  ReactionSpeed: 0.63
   Sustain: 0
-  RotationRelevancy: 1
+  RotationRelevancy: 0.52
   SmoothingStyle: 1
   DeltaType: 4
   UpdateAsLast: 1
@@ -3973,8 +3973,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5714373121889883457, guid: 86d93932b3770a44a8e45d6da920c5d6, type: 3}
+      propertyPath: Curling
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 5714373121889883457, guid: 86d93932b3770a44a8e45d6da920c5d6, type: 3}
+      propertyPath: Slithery
+      value: 0.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 5714373121889883457, guid: 86d93932b3770a44a8e45d6da920c5d6, type: 3}
       propertyPath: Gravity.y
-      value: -1
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5714373121889883457, guid: 86d93932b3770a44a8e45d6da920c5d6, type: 3}
+      propertyPath: WavingAxis.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5714373121889883457, guid: 86d93932b3770a44a8e45d6da920c5d6, type: 3}
+      propertyPath: MaxStretching
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5714373121889883457, guid: 86d93932b3770a44a8e45d6da920c5d6, type: 3}
+      propertyPath: ReactionSpeed
+      value: 0.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 5714373121889883457, guid: 86d93932b3770a44a8e45d6da920c5d6, type: 3}
+      propertyPath: MotionInfluence
+      value: 0.7631579
+      objectReference: {fileID: 0}
+    - target: {fileID: 5714373121889883457, guid: 86d93932b3770a44a8e45d6da920c5d6, type: 3}
+      propertyPath: RotationRelevancy
+      value: 0.52
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86d93932b3770a44a8e45d6da920c5d6, type: 3}
@@ -3997,15 +4025,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4622629264927549150, guid: 06c4ca568c8d59b4385cb5aa9fe69a2a, type: 3}
       propertyPath: Curling
-      value: 0.35
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: 4622629264927549150, guid: 06c4ca568c8d59b4385cb5aa9fe69a2a, type: 3}
       propertyPath: Slithery
-      value: 1.2
+      value: 0.86
       objectReference: {fileID: 0}
     - target: {fileID: 4622629264927549150, guid: 06c4ca568c8d59b4385cb5aa9fe69a2a, type: 3}
       propertyPath: Gravity.y
-      value: -1
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4622629264927549150, guid: 06c4ca568c8d59b4385cb5aa9fe69a2a, type: 3}
       propertyPath: WavingType
@@ -4029,11 +4057,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4622629264927549150, guid: 06c4ca568c8d59b4385cb5aa9fe69a2a, type: 3}
       propertyPath: MaxStretching
-      value: 0.089
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4622629264927549150, guid: 06c4ca568c8d59b4385cb5aa9fe69a2a, type: 3}
       propertyPath: ReactionSpeed
-      value: 0.7777778
+      value: 0.63
       objectReference: {fileID: 0}
     - target: {fileID: 4622629264927549150, guid: 06c4ca568c8d59b4385cb5aa9fe69a2a, type: 3}
       propertyPath: LimitSmoothing
@@ -4044,12 +4072,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4622629264927549150, guid: 06c4ca568c8d59b4385cb5aa9fe69a2a, type: 3}
+      propertyPath: MotionInfluence
+      value: 0.7631579
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622629264927549150, guid: 06c4ca568c8d59b4385cb5aa9fe69a2a, type: 3}
       propertyPath: _Editor_Category
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4622629264927549150, guid: 06c4ca568c8d59b4385cb5aa9fe69a2a, type: 3}
       propertyPath: RotationRelevancy
-      value: 0.6666667
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 4622629264927549150, guid: 06c4ca568c8d59b4385cb5aa9fe69a2a, type: 3}
       propertyPath: PosCurve.m_Curve.Array.data[0].inWeight
@@ -4375,8 +4407,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6465611192654362866, guid: bf41d8d3732b17f45bde7f0fb320d39c, type: 3}
+      propertyPath: Curling
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 6465611192654362866, guid: bf41d8d3732b17f45bde7f0fb320d39c, type: 3}
+      propertyPath: Slithery
+      value: 0.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 6465611192654362866, guid: bf41d8d3732b17f45bde7f0fb320d39c, type: 3}
       propertyPath: Gravity.y
-      value: -1
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6465611192654362866, guid: bf41d8d3732b17f45bde7f0fb320d39c, type: 3}
+      propertyPath: WavingAxis.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6465611192654362866, guid: bf41d8d3732b17f45bde7f0fb320d39c, type: 3}
+      propertyPath: MaxStretching
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6465611192654362866, guid: bf41d8d3732b17f45bde7f0fb320d39c, type: 3}
+      propertyPath: ReactionSpeed
+      value: 0.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 6465611192654362866, guid: bf41d8d3732b17f45bde7f0fb320d39c, type: 3}
+      propertyPath: MotionInfluence
+      value: 0.7631579
+      objectReference: {fileID: 0}
+    - target: {fileID: 6465611192654362866, guid: bf41d8d3732b17f45bde7f0fb320d39c, type: 3}
+      propertyPath: RotationRelevancy
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 6787151561081318123, guid: bf41d8d3732b17f45bde7f0fb320d39c, type: 3}
       propertyPath: m_RootOrder
@@ -4494,8 +4554,40 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6877667091293908418, guid: 2741e20c2b4c36a479835cfcb0ceac2d, type: 3}
+      propertyPath: Curling
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877667091293908418, guid: 2741e20c2b4c36a479835cfcb0ceac2d, type: 3}
+      propertyPath: Slithery
+      value: 0.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877667091293908418, guid: 2741e20c2b4c36a479835cfcb0ceac2d, type: 3}
       propertyPath: Gravity.y
-      value: -1
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877667091293908418, guid: 2741e20c2b4c36a479835cfcb0ceac2d, type: 3}
+      propertyPath: WavingAxis.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877667091293908418, guid: 2741e20c2b4c36a479835cfcb0ceac2d, type: 3}
+      propertyPath: MaxStretching
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877667091293908418, guid: 2741e20c2b4c36a479835cfcb0ceac2d, type: 3}
+      propertyPath: ReactionSpeed
+      value: 0.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877667091293908418, guid: 2741e20c2b4c36a479835cfcb0ceac2d, type: 3}
+      propertyPath: MotionInfluence
+      value: 0.7631579
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877667091293908418, guid: 2741e20c2b4c36a479835cfcb0ceac2d, type: 3}
+      propertyPath: _Editor_Category
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877667091293908418, guid: 2741e20c2b4c36a479835cfcb0ceac2d, type: 3}
+      propertyPath: RotationRelevancy
+      value: 0.52
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2741e20c2b4c36a479835cfcb0ceac2d, type: 3}
@@ -4562,15 +4654,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6301314310763180946, guid: 13c5ec36970602a40bd700b4d1a9cbee, type: 3}
       propertyPath: Curling
-      value: 0.35
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: 6301314310763180946, guid: 13c5ec36970602a40bd700b4d1a9cbee, type: 3}
       propertyPath: Slithery
-      value: 1.2
+      value: 0.86
       objectReference: {fileID: 0}
     - target: {fileID: 6301314310763180946, guid: 13c5ec36970602a40bd700b4d1a9cbee, type: 3}
       propertyPath: Gravity.y
-      value: -1
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6301314310763180946, guid: 13c5ec36970602a40bd700b4d1a9cbee, type: 3}
       propertyPath: WavingType
@@ -4594,11 +4686,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6301314310763180946, guid: 13c5ec36970602a40bd700b4d1a9cbee, type: 3}
       propertyPath: MaxStretching
-      value: 0.089
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6301314310763180946, guid: 13c5ec36970602a40bd700b4d1a9cbee, type: 3}
       propertyPath: ReactionSpeed
-      value: 0.7777778
+      value: 0.63
       objectReference: {fileID: 0}
     - target: {fileID: 6301314310763180946, guid: 13c5ec36970602a40bd700b4d1a9cbee, type: 3}
       propertyPath: LimitSmoothing
@@ -4609,12 +4701,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6301314310763180946, guid: 13c5ec36970602a40bd700b4d1a9cbee, type: 3}
+      propertyPath: MotionInfluence
+      value: 0.7631579
+      objectReference: {fileID: 0}
+    - target: {fileID: 6301314310763180946, guid: 13c5ec36970602a40bd700b4d1a9cbee, type: 3}
       propertyPath: _Editor_Category
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6301314310763180946, guid: 13c5ec36970602a40bd700b4d1a9cbee, type: 3}
       propertyPath: RotationRelevancy
-      value: 0.6666667
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 6301314310763180946, guid: 13c5ec36970602a40bd700b4d1a9cbee, type: 3}
       propertyPath: PosCurve.m_Curve.Array.data[0].inWeight
@@ -4940,8 +5036,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7838181939183254759, guid: 4138ba3d6428abc42869706683d53391, type: 3}
+      propertyPath: Curling
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838181939183254759, guid: 4138ba3d6428abc42869706683d53391, type: 3}
+      propertyPath: Slithery
+      value: 0.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838181939183254759, guid: 4138ba3d6428abc42869706683d53391, type: 3}
       propertyPath: Gravity.y
-      value: -1
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838181939183254759, guid: 4138ba3d6428abc42869706683d53391, type: 3}
+      propertyPath: WavingAxis.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838181939183254759, guid: 4138ba3d6428abc42869706683d53391, type: 3}
+      propertyPath: MaxStretching
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838181939183254759, guid: 4138ba3d6428abc42869706683d53391, type: 3}
+      propertyPath: ReactionSpeed
+      value: 0.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838181939183254759, guid: 4138ba3d6428abc42869706683d53391, type: 3}
+      propertyPath: MotionInfluence
+      value: 0.7631579
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838181939183254759, guid: 4138ba3d6428abc42869706683d53391, type: 3}
+      propertyPath: RotationRelevancy
+      value: 0.52
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4138ba3d6428abc42869706683d53391, type: 3}
@@ -5007,8 +5131,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7397009450607189062, guid: 38cf209465aa33e419b3e5f810769f3d, type: 3}
+      propertyPath: Curling
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 7397009450607189062, guid: 38cf209465aa33e419b3e5f810769f3d, type: 3}
+      propertyPath: Slithery
+      value: 0.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 7397009450607189062, guid: 38cf209465aa33e419b3e5f810769f3d, type: 3}
       propertyPath: Gravity.y
-      value: -1
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7397009450607189062, guid: 38cf209465aa33e419b3e5f810769f3d, type: 3}
+      propertyPath: WavingAxis.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7397009450607189062, guid: 38cf209465aa33e419b3e5f810769f3d, type: 3}
+      propertyPath: MaxStretching
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7397009450607189062, guid: 38cf209465aa33e419b3e5f810769f3d, type: 3}
+      propertyPath: ReactionSpeed
+      value: 0.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 7397009450607189062, guid: 38cf209465aa33e419b3e5f810769f3d, type: 3}
+      propertyPath: MotionInfluence
+      value: 0.7631579
+      objectReference: {fileID: 0}
+    - target: {fileID: 7397009450607189062, guid: 38cf209465aa33e419b3e5f810769f3d, type: 3}
+      propertyPath: RotationRelevancy
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 7666847535677195202, guid: 38cf209465aa33e419b3e5f810769f3d, type: 3}
       propertyPath: m_Name
@@ -5039,15 +5191,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8197994095407045746, guid: c42c58743630eb84a9d2a46082f57379, type: 3}
       propertyPath: Curling
-      value: 0.35
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: 8197994095407045746, guid: c42c58743630eb84a9d2a46082f57379, type: 3}
       propertyPath: Slithery
-      value: 1.2
+      value: 0.86
       objectReference: {fileID: 0}
     - target: {fileID: 8197994095407045746, guid: c42c58743630eb84a9d2a46082f57379, type: 3}
       propertyPath: Gravity.y
-      value: -1
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8197994095407045746, guid: c42c58743630eb84a9d2a46082f57379, type: 3}
       propertyPath: WavingType
@@ -5071,11 +5223,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8197994095407045746, guid: c42c58743630eb84a9d2a46082f57379, type: 3}
       propertyPath: MaxStretching
-      value: 0.089
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8197994095407045746, guid: c42c58743630eb84a9d2a46082f57379, type: 3}
       propertyPath: ReactionSpeed
-      value: 0.7777778
+      value: 0.63
       objectReference: {fileID: 0}
     - target: {fileID: 8197994095407045746, guid: c42c58743630eb84a9d2a46082f57379, type: 3}
       propertyPath: LimitSmoothing
@@ -5086,8 +5238,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8197994095407045746, guid: c42c58743630eb84a9d2a46082f57379, type: 3}
+      propertyPath: MotionInfluence
+      value: 0.7631579
+      objectReference: {fileID: 0}
+    - target: {fileID: 8197994095407045746, guid: c42c58743630eb84a9d2a46082f57379, type: 3}
       propertyPath: RotationRelevancy
-      value: 0.6666667
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 8197994095407045746, guid: c42c58743630eb84a9d2a46082f57379, type: 3}
       propertyPath: PosCurve.m_Curve.Array.data[0].inWeight
@@ -5457,8 +5613,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1096564465458461182, guid: 7fbc1f64d40a2ec4799a2503d5452986, type: 3}
+      propertyPath: Curling
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096564465458461182, guid: 7fbc1f64d40a2ec4799a2503d5452986, type: 3}
+      propertyPath: Slithery
+      value: 0.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096564465458461182, guid: 7fbc1f64d40a2ec4799a2503d5452986, type: 3}
       propertyPath: Gravity.y
-      value: -1
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096564465458461182, guid: 7fbc1f64d40a2ec4799a2503d5452986, type: 3}
+      propertyPath: WavingAxis.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096564465458461182, guid: 7fbc1f64d40a2ec4799a2503d5452986, type: 3}
+      propertyPath: MaxStretching
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096564465458461182, guid: 7fbc1f64d40a2ec4799a2503d5452986, type: 3}
+      propertyPath: ReactionSpeed
+      value: 0.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096564465458461182, guid: 7fbc1f64d40a2ec4799a2503d5452986, type: 3}
+      propertyPath: MotionInfluence
+      value: 0.7631579
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096564465458461182, guid: 7fbc1f64d40a2ec4799a2503d5452986, type: 3}
+      propertyPath: RotationRelevancy
+      value: 0.52
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fbc1f64d40a2ec4799a2503d5452986, type: 3}
@@ -5598,16 +5782,56 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 481457166206391483, guid: 8489be4cd005f4a43a39f96dd90de1b9, type: 3}
+      propertyPath: Curling
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 481457166206391483, guid: 8489be4cd005f4a43a39f96dd90de1b9, type: 3}
+      propertyPath: Slithery
+      value: 0.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 481457166206391483, guid: 8489be4cd005f4a43a39f96dd90de1b9, type: 3}
       propertyPath: Gravity.y
-      value: -1
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 481457166206391483, guid: 8489be4cd005f4a43a39f96dd90de1b9, type: 3}
+      propertyPath: WavingAxis.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 481457166206391483, guid: 8489be4cd005f4a43a39f96dd90de1b9, type: 3}
+      propertyPath: MaxStretching
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 481457166206391483, guid: 8489be4cd005f4a43a39f96dd90de1b9, type: 3}
+      propertyPath: ReactionSpeed
+      value: 0.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 481457166206391483, guid: 8489be4cd005f4a43a39f96dd90de1b9, type: 3}
+      propertyPath: MotionInfluence
+      value: 0.7631579
+      objectReference: {fileID: 0}
+    - target: {fileID: 481457166206391483, guid: 8489be4cd005f4a43a39f96dd90de1b9, type: 3}
+      propertyPath: UsePartialBlend
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 481457166206391483, guid: 8489be4cd005f4a43a39f96dd90de1b9, type: 3}
       propertyPath: _Editor_Category
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 481457166206391483, guid: 8489be4cd005f4a43a39f96dd90de1b9, type: 3}
+      propertyPath: RotationRelevancy
+      value: 0.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 481457166206391483, guid: 8489be4cd005f4a43a39f96dd90de1b9, type: 3}
       propertyPath: _Editor_FeaturesCategory
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 481457166206391483, guid: 8489be4cd005f4a43a39f96dd90de1b9, type: 3}
+      propertyPath: _editor_IsInspectorViewingColliders
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 481457166206391483, guid: 8489be4cd005f4a43a39f96dd90de1b9, type: 3}
+      propertyPath: _editor_IsInspectorViewingIncludedColliders
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 751841018817279555, guid: 8489be4cd005f4a43a39f96dd90de1b9, type: 3}
       propertyPath: m_Name
@@ -5689,8 +5913,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2141296397067482795, guid: 7c57455c40bcb5a4f82abbbf88657b75, type: 3}
+      propertyPath: Curling
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141296397067482795, guid: 7c57455c40bcb5a4f82abbbf88657b75, type: 3}
+      propertyPath: Slithery
+      value: 0.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141296397067482795, guid: 7c57455c40bcb5a4f82abbbf88657b75, type: 3}
       propertyPath: Gravity.y
-      value: -1
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141296397067482795, guid: 7c57455c40bcb5a4f82abbbf88657b75, type: 3}
+      propertyPath: WavingAxis.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141296397067482795, guid: 7c57455c40bcb5a4f82abbbf88657b75, type: 3}
+      propertyPath: MaxStretching
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141296397067482795, guid: 7c57455c40bcb5a4f82abbbf88657b75, type: 3}
+      propertyPath: ReactionSpeed
+      value: 0.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141296397067482795, guid: 7c57455c40bcb5a4f82abbbf88657b75, type: 3}
+      propertyPath: MotionInfluence
+      value: 0.7631579
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141296397067482795, guid: 7c57455c40bcb5a4f82abbbf88657b75, type: 3}
+      propertyPath: RotationRelevancy
+      value: 0.52
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c57455c40bcb5a4f82abbbf88657b75, type: 3}
@@ -5720,8 +5972,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2915483791710301297, guid: fe814f6d6d0a13547a8be469e212b857, type: 3}
+      propertyPath: Curling
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915483791710301297, guid: fe814f6d6d0a13547a8be469e212b857, type: 3}
+      propertyPath: Slithery
+      value: 0.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915483791710301297, guid: fe814f6d6d0a13547a8be469e212b857, type: 3}
       propertyPath: Gravity.y
-      value: -1
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915483791710301297, guid: fe814f6d6d0a13547a8be469e212b857, type: 3}
+      propertyPath: WavingAxis.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915483791710301297, guid: fe814f6d6d0a13547a8be469e212b857, type: 3}
+      propertyPath: MaxStretching
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915483791710301297, guid: fe814f6d6d0a13547a8be469e212b857, type: 3}
+      propertyPath: ReactionSpeed
+      value: 0.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915483791710301297, guid: fe814f6d6d0a13547a8be469e212b857, type: 3}
+      propertyPath: MotionInfluence
+      value: 0.7631579
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915483791710301297, guid: fe814f6d6d0a13547a8be469e212b857, type: 3}
+      propertyPath: RotationRelevancy
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 3458580289272550888, guid: fe814f6d6d0a13547a8be469e212b857, type: 3}
       propertyPath: m_RootOrder
@@ -5839,8 +6119,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3177944035304513218, guid: 4c6d50dde1d44304d8bfe02779968b28, type: 3}
+      propertyPath: Curling
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 3177944035304513218, guid: 4c6d50dde1d44304d8bfe02779968b28, type: 3}
+      propertyPath: Slithery
+      value: 0.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 3177944035304513218, guid: 4c6d50dde1d44304d8bfe02779968b28, type: 3}
       propertyPath: Gravity.y
-      value: -1
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3177944035304513218, guid: 4c6d50dde1d44304d8bfe02779968b28, type: 3}
+      propertyPath: WavingAxis.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3177944035304513218, guid: 4c6d50dde1d44304d8bfe02779968b28, type: 3}
+      propertyPath: MaxStretching
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3177944035304513218, guid: 4c6d50dde1d44304d8bfe02779968b28, type: 3}
+      propertyPath: ReactionSpeed
+      value: 0.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 3177944035304513218, guid: 4c6d50dde1d44304d8bfe02779968b28, type: 3}
+      propertyPath: MotionInfluence
+      value: 0.7631579
+      objectReference: {fileID: 0}
+    - target: {fileID: 3177944035304513218, guid: 4c6d50dde1d44304d8bfe02779968b28, type: 3}
+      propertyPath: RotationRelevancy
+      value: 0.52
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c6d50dde1d44304d8bfe02779968b28, type: 3}
@@ -5989,15 +6297,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4359543185479815939, guid: a09d99f657067d940b275119ebb5d036, type: 3}
       propertyPath: Curling
-      value: 0.35
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: 4359543185479815939, guid: a09d99f657067d940b275119ebb5d036, type: 3}
       propertyPath: Slithery
-      value: 1.2
+      value: 0.86
       objectReference: {fileID: 0}
     - target: {fileID: 4359543185479815939, guid: a09d99f657067d940b275119ebb5d036, type: 3}
       propertyPath: Gravity.y
-      value: -1
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4359543185479815939, guid: a09d99f657067d940b275119ebb5d036, type: 3}
       propertyPath: WavingType
@@ -6021,11 +6329,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4359543185479815939, guid: a09d99f657067d940b275119ebb5d036, type: 3}
       propertyPath: MaxStretching
-      value: 0.089
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4359543185479815939, guid: a09d99f657067d940b275119ebb5d036, type: 3}
       propertyPath: ReactionSpeed
-      value: 0.7777778
+      value: 0.63
       objectReference: {fileID: 0}
     - target: {fileID: 4359543185479815939, guid: a09d99f657067d940b275119ebb5d036, type: 3}
       propertyPath: LimitSmoothing
@@ -6036,12 +6344,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4359543185479815939, guid: a09d99f657067d940b275119ebb5d036, type: 3}
+      propertyPath: MotionInfluence
+      value: 0.7631579
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359543185479815939, guid: a09d99f657067d940b275119ebb5d036, type: 3}
       propertyPath: _Editor_Category
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4359543185479815939, guid: a09d99f657067d940b275119ebb5d036, type: 3}
       propertyPath: RotationRelevancy
-      value: 0.6666667
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 4359543185479815939, guid: a09d99f657067d940b275119ebb5d036, type: 3}
       propertyPath: PosCurve.m_Curve.Array.data[0].inWeight
@@ -6352,15 +6664,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3794500981427039370, guid: 6f2a1d6704fc1ce42a7c495b527890ec, type: 3}
       propertyPath: Curling
-      value: 0.35
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: 3794500981427039370, guid: 6f2a1d6704fc1ce42a7c495b527890ec, type: 3}
       propertyPath: Slithery
-      value: 1.2
+      value: 0.86
       objectReference: {fileID: 0}
     - target: {fileID: 3794500981427039370, guid: 6f2a1d6704fc1ce42a7c495b527890ec, type: 3}
       propertyPath: Gravity.y
-      value: -1
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3794500981427039370, guid: 6f2a1d6704fc1ce42a7c495b527890ec, type: 3}
       propertyPath: WavingType
@@ -6384,11 +6696,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3794500981427039370, guid: 6f2a1d6704fc1ce42a7c495b527890ec, type: 3}
       propertyPath: MaxStretching
-      value: 0.089
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3794500981427039370, guid: 6f2a1d6704fc1ce42a7c495b527890ec, type: 3}
       propertyPath: ReactionSpeed
-      value: 0.7777778
+      value: 0.63
       objectReference: {fileID: 0}
     - target: {fileID: 3794500981427039370, guid: 6f2a1d6704fc1ce42a7c495b527890ec, type: 3}
       propertyPath: LimitSmoothing
@@ -6399,12 +6711,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3794500981427039370, guid: 6f2a1d6704fc1ce42a7c495b527890ec, type: 3}
+      propertyPath: MotionInfluence
+      value: 0.7631579
+      objectReference: {fileID: 0}
+    - target: {fileID: 3794500981427039370, guid: 6f2a1d6704fc1ce42a7c495b527890ec, type: 3}
       propertyPath: _Editor_Category
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3794500981427039370, guid: 6f2a1d6704fc1ce42a7c495b527890ec, type: 3}
       propertyPath: RotationRelevancy
-      value: 0.6666667
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 3794500981427039370, guid: 6f2a1d6704fc1ce42a7c495b527890ec, type: 3}
       propertyPath: PosCurve.m_Curve.Array.data[0].inWeight

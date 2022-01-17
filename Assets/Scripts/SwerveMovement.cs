@@ -21,7 +21,7 @@ public class SwerveMovement : MonoBehaviour
 
     private void Update()
     {
-        if (GameController._oyunAktif == true)
+        if (GameManager.instance.isContinue == true)
         {
             centerPosition = _getPoint.transform.position;
 
