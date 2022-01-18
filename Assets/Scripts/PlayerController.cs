@@ -109,6 +109,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         bool control = true;
         float counter = 0;
+        float localScaleMult = .05f / TicketManager.instance.ticketCount;
 		while (control)
 		{
             counter += 0.05f;
@@ -116,12 +117,12 @@ public class PlayerController : MonoBehaviour
 			{
                // control = false;
 			}
-            float x = ticketMat.GetTextureOffset("_MainTex").x - 0.04f;
+            float x = ticketMat.GetTextureOffset("_MainTex").x - 0.08f;
             ticketMat.SetTextureOffset("_MainTex", new Vector2(x, 0));
             finalTicketPacket.transform.position = new Vector3(
-                finalTicketPacket.transform.position.x,finalTicketPacket.transform.position.y-0.08f,finalTicketPacket.transform.position.z);
-            float s = ticketCylinder.transform.localScale.x-0.001f;
-            ticketCylinder.transform.localScale = new Vector3(s, .6f,s);
+                finalTicketPacket.transform.position.x,finalTicketPacket.transform.position.y-0.16f,finalTicketPacket.transform.position.z);
+            float s = ticketCylinder.transform.localScale.x-localScaleMult;
+            ticketCylinder.transform.localScale = new Vector3(s, ticketCylinder.transform.localScale.y,s);
             yield return new WaitForSeconds(0.01f);
             if (s < .2f) control = false;
         }
