@@ -21,6 +21,7 @@ TagManager:
   - x8
   - x9
   - x10
+  - FinalX
   layers:
   - Default
   - TransparentFX

@@ -8,6 +8,7 @@ public class UIController : MonoBehaviour
 	public static UIController instance;
 	public GameObject TapToStartPanel, LoosePanel, GamePanel, WinPanel;
 	public  Text  gamePlayScoreText, winScreenScoreText, levelNoText;
+	public Slider playerSlider;
 
 
 
@@ -101,6 +102,34 @@ public class UIController : MonoBehaviour
 		TapToStartPanel.SetActive(false);
 		WinPanel.SetActive(false);
 		LoosePanel.SetActive(false);
+	}
+
+	public IEnumerator SliderIncrease()
+	{
+		bool control = true;
+		float sliderValue = playerSlider.value;
+		float nextValue = sliderValue + 0.1f;
+		while (control)
+		{
+			sliderValue += 0.02f;
+			playerSlider.value = sliderValue;
+			if (nextValue <= playerSlider.value) control = false;
+			yield return new WaitForSeconds(0.02f);
+		}
+	}
+
+	public IEnumerator SliderDecrease()
+	{
+		bool control = true;
+		float sliderValue = playerSlider.value;
+		float nextValue = sliderValue - 0.06f;
+		while (control)
+		{
+			sliderValue -= 0.02f;
+			playerSlider.value = sliderValue;
+			if (nextValue >= playerSlider.value) control = false;
+			yield return new WaitForSeconds(0.02f);
+		}
 	}
 
 }

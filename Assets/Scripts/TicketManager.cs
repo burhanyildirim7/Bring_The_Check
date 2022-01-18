@@ -19,9 +19,21 @@ public class TicketManager : MonoBehaviour
 	{
 		ticketCount++;
 		if(ticketCount < 14)
+		{ 
+			Tickets[ticketCount - 1].GetComponentInChildren<Renderer>().enabled = false;
+			Tickets[ticketCount].GetComponentInChildren<Renderer>().enabled = true;
+			//Tickets[ticketCount - 1].gameObject.SetActive(false);
+			//Tickets[ticketCount].gameObject.SetActive(true);
+		}
+	}
+
+	public void StartingEvents()
+	{
+		ticketCount = 0;
+		for (int i = 0; i < Tickets.Count; i++)
 		{
-			Tickets[ticketCount - 1].gameObject.SetActive(false);
-			Tickets[ticketCount].gameObject.SetActive(true);
+			Tickets[i].GetComponentInChildren<Renderer>().enabled = false;
+			//Tickets[i].gameObject.SetActive(false);
 		}
 	}
 

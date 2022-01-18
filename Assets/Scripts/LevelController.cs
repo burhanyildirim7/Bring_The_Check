@@ -63,7 +63,8 @@ public class LevelController : MonoBehaviour
 		IncreaseLevelNo();
 		LevelStartingEvents();
 		GameManager.instance.ClearLists();
-		//PlayerController.instance.PlayerStartPosition();
+		PlayerController.instance.StartingEvents();
+		TicketManager.instance.StartingEvents();
 		//CameraController.instance.SetCameraStartOffset();
 	}
 
@@ -72,7 +73,8 @@ public class LevelController : MonoBehaviour
 	{
 		Elephant.LevelFailed(totalLevelNo);
 		GameManager.instance.ActivateAllDisabledObjects();
-		//PlayerController.instance.PlayerStartPosition();
+		PlayerController.instance.StartingEvents();
+		TicketManager.instance.StartingEvents();
 
 	}
 }

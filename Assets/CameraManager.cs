@@ -48,10 +48,11 @@ public class CameraManager : MonoBehaviour
 
     }
 
-    public void SetCameraStartOffset()
+    public void SetCameraForStart()
     {
         GetComponent<CinemachineBrain>().enabled = true;
         cmVcam.LookAt = cameraLookAtObj.transform;
+        cmVcam.Follow = player.transform;
         cmVcam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset = cameraStartOffset;
     }
 

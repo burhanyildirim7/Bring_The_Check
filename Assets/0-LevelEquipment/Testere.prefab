@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 7041357806229474845}
   m_Layer: 0
   m_Name: Transpos
-  m_TagString: DegersizEsya
+  m_TagString: ENGEL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 248058886944199527}
   m_Layer: 0
   m_Name: Testere
-  m_TagString: DegersizEsya
+  m_TagString: ENGEL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -392,11 +392,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: e72ee0deaca5ce942b0109e48b8b6d69, type: 2}
     - target: {fileID: 961299489642591549, guid: 80c3018eb6377f74ea30998f40c1b301, type: 3}
       propertyPath: m_TagString
-      value: DegersizEsya
+      value: ENGEL
       objectReference: {fileID: 0}
     - target: {fileID: 1410324318715345673, guid: 80c3018eb6377f74ea30998f40c1b301, type: 3}
       propertyPath: m_TagString
-      value: DegersizEsya
+      value: ENGEL
       objectReference: {fileID: 0}
     - target: {fileID: 3503860344463388855, guid: 80c3018eb6377f74ea30998f40c1b301, type: 3}
       propertyPath: m_RootOrder
@@ -460,7 +460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4317798413843376653, guid: 80c3018eb6377f74ea30998f40c1b301, type: 3}
       propertyPath: m_TagString
-      value: DegersizEsya
+      value: ENGEL
       objectReference: {fileID: 0}
     - target: {fileID: 5303483240664801746, guid: 80c3018eb6377f74ea30998f40c1b301, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -468,7 +468,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 0433357df714d624aaa2bc03fe6351fe, type: 2}
     - target: {fileID: 6964644601048038977, guid: 80c3018eb6377f74ea30998f40c1b301, type: 3}
       propertyPath: m_TagString
-      value: DegersizEsya
+      value: ENGEL
       objectReference: {fileID: 0}
     - target: {fileID: 7097317554676778726, guid: 80c3018eb6377f74ea30998f40c1b301, type: 3}
       propertyPath: m_Materials.Array.data[0]

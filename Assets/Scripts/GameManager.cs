@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     public  bool isContinue;
 
+    public int lastX;  // puanların çarpılacağı en son x değerii..
+
     [HideInInspector] public int score;
 
     [HideInInspector] public List<GameObject> disabledObjects = new List<GameObject>();
@@ -19,8 +21,15 @@ public class GameManager : MonoBehaviour
         else Destroy(this);
 	}
 
-	void Start()
-    {
+    public void IncreaseScore()
+	{
+        score += 10;
+	}
+
+    public void DecreaseScore()
+	{
+        if(score >= 10)
+        score -= 10;
     }
 
     public void ActivateAllDisabledObjects()
@@ -42,20 +51,28 @@ public class GameManager : MonoBehaviour
         disabledObjects.Clear();
     }
 
-
-    public void FinalScoreMultiply(string str)
+    public void FinalScoreMultiply()
     {
-        if (str == "x10") score *= 10;
-        else if (str == "x9") score *= 9;
-        else if (str == "x8") score *= 8;
-        else if (str == "x7") score *= 7;
-        else if (str == "x6") score *= 6;
-        else if (str == "x5") score *= 5;
-        else if (str == "x4") score *= 4;
-        else if (str == "x3") score *= 3;
-        else if (str == "x2") score *= 2;
+        score = score * lastX;
         UIController.instance.SetScoreText();
+        Debug.Log(score + "//// " + lastX);
     }
+
+    //public void FinalScoreMultiply(string str)
+    //{
+    //    if (str == "x10") score *= 10;
+    //    else if (str == "x9") score *= 9;
+    //    else if (str == "x8") score *= 8;
+    //    else if (str == "x7") score *= 7;
+    //    else if (str == "x6") score *= 6;
+    //    else if (str == "x5") score *= 5;
+    //    else if (str == "x4") score *= 4;
+    //    else if (str == "x3") score *= 3;
+    //    else if (str == "x2") score *= 2;
+    //    UIController.instance.SetScoreText();
+    //}
+
+
 
 
 
