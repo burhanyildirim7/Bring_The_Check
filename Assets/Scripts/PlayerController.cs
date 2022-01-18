@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public Animator playerAnimator,paraAnim;
     [SerializeField] private GameObject _karakterPaketi;
     public Material ticketMat;
-    public GameObject finalTicketPacket,ticketCylinder,sonPosCihazi,ilkPosCihazi;
+    public GameObject finalTicketPacket,ticketCylinder,sonPosCihazi,ilkPosCihazi,paraEfekti;
     public bool isFinalCube;
 
 
@@ -56,6 +56,10 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(UIController.instance.SliderDecrease());
             //GameManager.instance.disabledObjects.Add(other.gameObject);
             GameManager.instance.DecreaseScore();
+            GameObject effect = Instantiate(paraEfekti);
+            effect.transform.SetParent(transform);
+            effect.transform.localPosition = new Vector3(0, 1.2f, 0);
+            PlayerHitAnim();
            // other.gameObject.SetActive(false);
 		}
         else if (other.CompareTag("Finish"))
@@ -79,9 +83,17 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void PlayerHitAnim()
+	{
+        playerAnimator.ResetTrigger("idle");
+        playerAnimator.ResetTrigger("idleFixedArm");
+        playerAnimator.ResetTrigger("skate");
+        playerAnimator.SetTrigger("hit");
+    }
 
     public void PlayerSkateAnim()
 	{
+        playerAnimator.ResetTrigger("hit");
         playerAnimator.ResetTrigger("idle");
         playerAnimator.ResetTrigger("idleFixedArm");
         playerAnimator.SetTrigger("skate");
@@ -89,6 +101,7 @@ public class PlayerController : MonoBehaviour
 
     public void PlayerIdleAnim()
 	{
+        playerAnimator.ResetTrigger("hit");
         playerAnimator.ResetTrigger("skate");
         playerAnimator.ResetTrigger("idleFixedArm");
         playerAnimator.SetTrigger("idle");
@@ -96,6 +109,7 @@ public class PlayerController : MonoBehaviour
 
     public void PlayerIdleFixedArmAnim()
 	{
+        playerAnimator.ResetTrigger("hit");
         playerAnimator.ResetTrigger("skate");
         playerAnimator.ResetTrigger("idle");
         playerAnimator.SetTrigger("idleFixedArm");

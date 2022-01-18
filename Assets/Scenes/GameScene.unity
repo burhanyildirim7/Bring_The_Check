@@ -992,6 +992,7 @@ MonoBehaviour:
   ticketCylinder: {fileID: 724405048}
   sonPosCihazi: {fileID: 1178392083}
   ilkPosCihazi: {fileID: 1515291955}
+  paraEfekti: {fileID: 190236, guid: 39f586f40e7d928499bfe946ffb04ad5, type: 3}
   isFinalCube: 0
 --- !u!54 &1443049515
 Rigidbody:
@@ -1062,7 +1063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a053a4bd379048008b9a4e6d62bb041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 20
+  _speed: 7
 --- !u!1 &2063141234
 GameObject:
   m_ObjectHideFlags: 0
