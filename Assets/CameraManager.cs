@@ -7,7 +7,7 @@ public class CameraManager : MonoBehaviour
 {
     public static CameraManager instance;
     public CinemachineVirtualCamera cmVcam;
-    private Vector3 cameraFinalOffset = new Vector3(0, 0, -15);
+    private Vector3 cameraFinalOffset = new Vector3(0, 0, -20);
     private Vector3 cameraStartOffset = new Vector3(0, 3.3f, -7);
     public GameObject cameraLookAtObj, player, ticketCylinder;
 

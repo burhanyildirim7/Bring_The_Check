@@ -126,11 +126,13 @@ public class PlayerController : MonoBehaviour
         GameManager.instance.isContinue = false;
         GameManager.instance.score = 0;
         UIController.instance.playerSlider.value = 0;
-        isFinalCube = false;
+		UIController.instance.gamePlayScoreText.text = "0";
+		isFinalCube = false;
         ticketMat.SetTextureOffset("_MainTex", Vector2.zero);
         finalTicketPacket.transform.position = new Vector3(0,0,-2f);
         ticketCylinder.transform.localScale = new Vector3(1.5f,0.45f,1.5f);
         transform.position = new Vector3(0,transform.position.y,0);
+
     }
     
 
@@ -140,6 +142,7 @@ public class PlayerController : MonoBehaviour
         if(GameManager.instance.score > 5)
 		{
             // baþarýlý bir bitiriþten sonra...
+            
             StartCoroutine(RollingTicketFinal());
         }
 		else
@@ -174,7 +177,7 @@ public class PlayerController : MonoBehaviour
                 finalTicketPacket.transform.position.x,finalTicketPacket.transform.position.y-0.16f,finalTicketPacket.transform.position.z);
             float s = ticketCylinder.transform.localScale.x-localScaleMult;
             ticketCylinder.transform.localScale = new Vector3(s, ticketCylinder.transform.localScale.y,s);
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.005f);
             if (s < .2f) control = false;
         }
         SuccessfullFinishEvents();

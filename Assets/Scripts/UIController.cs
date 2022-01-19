@@ -7,7 +7,7 @@ public class UIController : MonoBehaviour
 {
 	public static UIController instance;
 	public GameObject TapToStartPanel, LoosePanel, GamePanel, WinPanel;
-	public  Text  gamePlayScoreText, winScreenScoreText, levelNoText;
+	public  Text  gamePlayScoreText, winScreenScoreText, levelNoText,totalScoreText;
 	public Slider playerSlider;
 
 
@@ -25,9 +25,7 @@ public class UIController : MonoBehaviour
 
 	public void StartUI()
 	{
-		TapToStartPanel.SetActive(true);
-		LoosePanel.SetActive(false);
-		GamePanel.SetActive(false);
+		ActivateTapToStartScreen();
 	}
 
 	public void SetLevelText(int levelNo)
@@ -65,12 +63,18 @@ public class UIController : MonoBehaviour
 		WinPanel.SetActive(false);
 		GamePanel.SetActive(false);
 		LevelController.instance.NextLevelEvents();
+		SetTotalScoreText();
 	}
 
 
 	public void SetScoreText()
 	{
 		gamePlayScoreText.text = GameManager.instance.score.ToString();
+	}
+
+	public void SetTotalScoreText()
+	{
+		totalScoreText.text = PlayerPrefs.GetInt("total").ToString();
 	}
 
 	public void WinScreenScore()
@@ -99,9 +103,10 @@ public class UIController : MonoBehaviour
 
 	public void ActivateTapToStartScreen()
 	{
-		TapToStartPanel.SetActive(false);
+		TapToStartPanel.SetActive(true);
 		WinPanel.SetActive(false);
 		LoosePanel.SetActive(false);
+		totalScoreText.text = PlayerPrefs.GetInt("total").ToString();
 	}
 
 	public IEnumerator SliderIncrease()

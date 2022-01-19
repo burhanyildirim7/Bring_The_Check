@@ -24,12 +24,14 @@ public class GameManager : MonoBehaviour
     public void IncreaseScore()
 	{
         score += 10;
-	}
+        UIController.instance.SetScoreText();
+    }
 
     public void DecreaseScore()
 	{
         if(score >= 10)
         score -= 10;
+        UIController.instance.SetScoreText();
     }
 
     public void ActivateAllDisabledObjects()
@@ -54,8 +56,7 @@ public class GameManager : MonoBehaviour
     public void FinalScoreMultiply()
     {
         score = score * lastX;
-        UIController.instance.SetScoreText();
-        Debug.Log(score + "//// " + lastX);
+        PlayerPrefs.SetInt("total", GameManager.instance.score + PlayerPrefs.GetInt("total"));
     }
 
     //public void FinalScoreMultiply(string str)
