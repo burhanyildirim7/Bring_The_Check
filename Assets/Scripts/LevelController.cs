@@ -40,6 +40,7 @@ public class LevelController : MonoBehaviour
 	// Bu fonksiyon oyun ilk a??ld???nda ?a?r?lacak..
 	public void LevelStartingEvents()
 	{
+		UIController.instance.playerSlider.value = 0;
 		if (totalLevelNo > levels.Count)
 		{
 			levelNo = Random.Range(1, levels.Count + 1);
@@ -65,7 +66,6 @@ public class LevelController : MonoBehaviour
 		GameManager.instance.ClearLists();
 		PlayerController.instance.StartingEvents();
 		TicketManager.instance.StartingEvents();
-		//CameraController.instance.SetCameraStartOffset();
 	}
 
 	// restart level tu?una bas?ld???nda UIManager scriptinden ?a?r?lacak..

@@ -59,6 +59,7 @@ public class UIController : MonoBehaviour
 	// NEXT LEVEL TU?UNA BASILDI?INDA  --- W?N EKRANINDA
 	public void NextLevelButtonClick()
 	{
+		playerSlider.value = 0;
 		TapToStartPanel.SetActive(true);
 		WinPanel.SetActive(false);
 		GamePanel.SetActive(false);
@@ -91,6 +92,8 @@ public class UIController : MonoBehaviour
 
 	public void ActivateLooseScreen()
 	{
+		StopCoroutine(SliderDecrease());
+		StopCoroutine(SliderIncrease());
 		GamePanel.SetActive(false);
 		LoosePanel.SetActive(true);
 	}
@@ -113,13 +116,13 @@ public class UIController : MonoBehaviour
 	{
 		bool control = true;
 		float sliderValue = playerSlider.value;
-		float nextValue = sliderValue + 0.1f;
-		while (control)
+		float nextValue = sliderValue + 10f;
+		while (control && GameManager.instance.isContinue)
 		{
-			sliderValue += 0.02f;
+			sliderValue += 0.5f;
 			playerSlider.value = sliderValue;
 			if (nextValue <= playerSlider.value) control = false;
-			yield return new WaitForSeconds(0.02f);
+			yield return new WaitForSeconds(0.015f);
 		}
 	}
 
@@ -127,13 +130,13 @@ public class UIController : MonoBehaviour
 	{
 		bool control = true;
 		float sliderValue = playerSlider.value;
-		float nextValue = sliderValue - 0.06f;
-		while (control)
+		float nextValue = sliderValue - 10f;
+		while (control && GameManager.instance.isContinue)
 		{
-			sliderValue -= 0.02f;
+			sliderValue -= 0.5f;
 			playerSlider.value = sliderValue;
 			if (nextValue >= playerSlider.value) control = false;
-			yield return new WaitForSeconds(0.02f);
+			yield return new WaitForSeconds(0.015f);
 		}
 	}
 

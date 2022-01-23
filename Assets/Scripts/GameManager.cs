@@ -30,8 +30,11 @@ public class GameManager : MonoBehaviour
     public void DecreaseScore()
 	{
         if(score >= 10)
-        score -= 10;
-        UIController.instance.SetScoreText();
+		{
+            score -= 10;
+            UIController.instance.SetScoreText();
+        }
+        
     }
 
     public void ActivateAllDisabledObjects()
