@@ -908,25 +908,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_platform_engel_01a (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 3643103383190826689, guid: 10f3217d5c5eca34d898b3c8aa285c38, type: 3}
-      propertyPath: m_TagString
-      value: ENGEL
-      objectReference: {fileID: 0}
     - target: {fileID: 4162794543691641979, guid: 10f3217d5c5eca34d898b3c8aa285c38, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4162794543691641979, guid: 10f3217d5c5eca34d898b3c8aa285c38, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4162794543691641979, guid: 10f3217d5c5eca34d898b3c8aa285c38, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4162794543691641979, guid: 10f3217d5c5eca34d898b3c8aa285c38, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4162794543691641979, guid: 10f3217d5c5eca34d898b3c8aa285c38, type: 3}
       propertyPath: m_LocalPosition.x
@@ -968,14 +952,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6660381475296459562, guid: 10f3217d5c5eca34d898b3c8aa285c38, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b14576d3547202940a3470aee37dc291, type: 2}
-    - target: {fileID: 6754296987059774799, guid: 10f3217d5c5eca34d898b3c8aa285c38, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 0cdfb4e676bb1c64489abd9117c852eb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10f3217d5c5eca34d898b3c8aa285c38, type: 3}
 --- !u!4 &7513729582986751383 stripped
@@ -2713,25 +2689,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5873563258509760783}
     m_Modifications:
-    - target: {fileID: 5419465233172846634, guid: cc8ec99b52e14c54f8550cd20cc71680, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a50b204be7b01ef4da52d0f7e5a1906f, type: 2}
     - target: {fileID: 6314770207534562006, guid: cc8ec99b52e14c54f8550cd20cc71680, type: 3}
       propertyPath: m_RootOrder
       value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314770207534562006, guid: cc8ec99b52e14c54f8550cd20cc71680, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314770207534562006, guid: cc8ec99b52e14c54f8550cd20cc71680, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 68
-      objectReference: {fileID: 0}
-    - target: {fileID: 6314770207534562006, guid: cc8ec99b52e14c54f8550cd20cc71680, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6314770207534562006, guid: cc8ec99b52e14c54f8550cd20cc71680, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2776,10 +2736,6 @@ PrefabInstance:
     - target: {fileID: 6694955607849525356, guid: cc8ec99b52e14c54f8550cd20cc71680, type: 3}
       propertyPath: m_Name
       value: HareketliSilindir
-      objectReference: {fileID: 0}
-    - target: {fileID: 6694955607849525356, guid: cc8ec99b52e14c54f8550cd20cc71680, type: 3}
-      propertyPath: m_TagString
-      value: ENGEL
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc8ec99b52e14c54f8550cd20cc71680, type: 3}
