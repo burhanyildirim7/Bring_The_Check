@@ -8,10 +8,10 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
-    public Animator playerAnimator,paraAnim,gelenParaAnim, gidenParaAnim;
+    public Animator playerAnimator, paraAnim, gelenParaAnim, gidenParaAnim;
     [SerializeField] private GameObject _karakterPaketi;
     public Material ticketMat;
-    public GameObject finalTicketPacket,ticketCylinder,sonPosCihazi,ilkPosCihazi,paraEfekti;
+    public GameObject finalTicketPacket, ticketCylinder, sonPosCihazi, ilkPosCihazi, paraEfekti;
     public bool isFinalCube;
 
 
@@ -32,17 +32,19 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-  
+
         if (other.CompareTag("musteri"))
         {
-            // MUSTERIYE CARPINCA YAPILACAKLAR... 
+            // MUSTERIYE CARPINCA YAPILACAKLAR...
+
+            MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
 
             other.GetComponent<Collider>().enabled = false;
             TicketManager.instance.IncreaseTicketCount();
             GameManager.instance.IncreaseScore();
             paraAnim.SetTrigger("para");
             gelenParaAnim.SetTrigger("gelen");
-            if(UIController.instance.playerSlider.value <= 90)
+            if (UIController.instance.playerSlider.value <= 90)
             {
                 StopCoroutine(UIController.instance.SliderDecrease());
                 StartCoroutine(UIController.instance.SliderIncrease());
@@ -50,48 +52,50 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(ActivateCollider(other.gameObject));
             other.transform.parent.transform.GetChild(0).gameObject.SetActive(true);
             StartCoroutine(DeactivateEffect(other.transform.parent.transform.GetChild(0).gameObject));
-            
+
         }
-        else if(other.CompareTag("ENGEL"))
-		{
-            // ENGELELRE CARPINCA YAPILACAKLAR.... 
-          
-			if (UIController.instance.playerSlider.value >= 10)
-			{
+        else if (other.CompareTag("ENGEL"))
+        {
+            // ENGELELRE CARPINCA YAPILACAKLAR....
+
+            MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+
+            if (UIController.instance.playerSlider.value >= 10)
+            {
                 GameManager.instance.DecreaseScore();
                 gidenParaAnim.SetTrigger("giden");
                 StopCoroutine(UIController.instance.SliderIncrease());
                 StartCoroutine(UIController.instance.SliderDecrease());
-            }      
+            }
             GameObject effect = Instantiate(paraEfekti);
             effect.transform.SetParent(transform);
             effect.transform.localPosition = new Vector3(0, 1.2f, 0);
             PlayerHitAnim();
-		}
+        }
         else if (other.CompareTag("Finish"))
-		{
+        {
             // FINISH NOKTASINA GELINCE YAPILACAKLAR
-          
+
             GameManager.instance.isContinue = false;
             PlayerIdleFixedArmAnim();
             if (GameManager.instance.score > 0)
-			{
+            {
                 // BASARILI ISE....
                 FinishEvents();
                 other.transform.parent.transform.GetChild(0).gameObject.SetActive(true); // konfeti
             }
-			else
-			{
+            else
+            {
                 // BASARILI DEGILSE...
                 UIController.instance.ActivateLooseScreen();
-			}
+            }
 
         }
 
     }
 
     public void PlayerHitAnim()
-	{
+    {
         playerAnimator.ResetTrigger("idle");
         playerAnimator.ResetTrigger("idleFixedArm");
         playerAnimator.ResetTrigger("skate");
@@ -99,15 +103,15 @@ public class PlayerController : MonoBehaviour
     }
 
     public void PlayerSkateAnim()
-	{
+    {
         playerAnimator.ResetTrigger("hit");
         playerAnimator.ResetTrigger("idle");
         playerAnimator.ResetTrigger("idleFixedArm");
         playerAnimator.SetTrigger("skate");
-	}
+    }
 
     public void PlayerIdleAnim()
-	{
+    {
         playerAnimator.ResetTrigger("hit");
         playerAnimator.ResetTrigger("skate");
         playerAnimator.ResetTrigger("idleFixedArm");
@@ -115,7 +119,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void PlayerIdleFixedArmAnim()
-	{
+    {
         playerAnimator.ResetTrigger("hit");
         playerAnimator.ResetTrigger("skate");
         playerAnimator.ResetTrigger("idle");
@@ -133,36 +137,36 @@ public class PlayerController : MonoBehaviour
         GameManager.instance.isContinue = false;
         GameManager.instance.score = 0;
         UIController.instance.playerSlider.value = 0;
-		UIController.instance.gamePlayScoreText.text = "0";
-		isFinalCube = false;
+        UIController.instance.gamePlayScoreText.text = "0";
+        isFinalCube = false;
         ticketMat.SetTextureOffset("_MainTex", Vector2.zero);
         ticketMat.color = new Color(.5f, .5f, .5f);
-        finalTicketPacket.transform.position = new Vector3(0,0,-2f);
-        ticketCylinder.transform.localScale = new Vector3(1.5f,0.45f,1.5f);
-        transform.position = new Vector3(0,transform.position.y,0);
+        finalTicketPacket.transform.position = new Vector3(0, 0, -2f);
+        ticketCylinder.transform.localScale = new Vector3(1.5f, 0.45f, 1.5f);
+        transform.position = new Vector3(0, transform.position.y, 0);
 
 
     }
-    
+
 
     public void FinishEvents()
-	{
-        
-        if(GameManager.instance.score > 5)
-		{
-            // baþarýlý bir bitiriþten sonra...
+    {
+
+        if (GameManager.instance.score > 5)
+        {
+            // ba?ar?l? bir bitiri?ten sonra...
             StartCoroutine(RollingTicketFinal());
         }
-		else
-		{
-            // baþarýsýz bir bitiriþten sonra..
+        else
+        {
+            // ba?ar?s?z bir bitiri?ten sonra..
             UIController.instance.ActivateLooseScreen();
-		}
-        
-	}
+        }
+
+    }
 
     public IEnumerator RollingTicketFinal()
-	{
+    {
         yield return new WaitForSeconds(1.5f);
         ilkPosCihazi.SetActive(false);
         sonPosCihazi.SetActive(true);
@@ -173,37 +177,37 @@ public class PlayerController : MonoBehaviour
         bool control = true;
         float counter = 0;
         float localScaleMult = .05f / TicketManager.instance.ticketCount;
-		while (control && !isFinalCube)
-		{
+        while (control && !isFinalCube)
+        {
             counter += 0.05f;
-            if(TicketManager.instance.ticketCount < counter)
-			{
-               // control = false;
-			}
+            if (TicketManager.instance.ticketCount < counter)
+            {
+                // control = false;
+            }
             float x = ticketMat.GetTextureOffset("_MainTex").x - 0.08f;
             ticketMat.SetTextureOffset("_MainTex", new Vector2(x, 0));
             finalTicketPacket.transform.position = new Vector3(
-                finalTicketPacket.transform.position.x,finalTicketPacket.transform.position.y-0.16f,finalTicketPacket.transform.position.z);
-            float s = ticketCylinder.transform.localScale.x-localScaleMult;
-            ticketCylinder.transform.localScale = new Vector3(s, ticketCylinder.transform.localScale.y,s);
+                finalTicketPacket.transform.position.x, finalTicketPacket.transform.position.y - 0.16f, finalTicketPacket.transform.position.z);
+            float s = ticketCylinder.transform.localScale.x - localScaleMult;
+            ticketCylinder.transform.localScale = new Vector3(s, ticketCylinder.transform.localScale.y, s);
             yield return new WaitForSeconds(0.005f);
             if (s < .2f) control = false;
         }
         SuccessfullFinishEvents();
-        
-	}
+
+    }
 
     public void SuccessfullFinishEvents()
-	{
+    {
         GameManager.instance.FinalScoreMultiply();
         UIController.instance.ActivateWinScreen();
-	}
+    }
 
     IEnumerator ActivateCollider(GameObject obj)
-	{
+    {
         yield return new WaitForSeconds(1);
         obj.GetComponent<Collider>().enabled = true;
-	}
+    }
 
     IEnumerator DeactivateEffect(GameObject obj)
     {
