@@ -1346,6 +1346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5346594751689254751}
   - component: {fileID: 7271058930928642181}
+  - component: {fileID: 8225900831609880136}
   m_Layer: 0
   m_Name: ErkekMusteri2
   m_TagString: musteri
@@ -1387,6 +1388,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.3982034, y: 2.6996548, z: 0.52963066}
   m_Center: {x: -0.074415445, y: 0.8498272, z: 0.09176885}
+--- !u!95 &8225900831609880136
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4717867187742162405}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 45d4f03a55a5a6847bd211b2a2676622, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4812729597966165475
 GameObject:
   m_ObjectHideFlags: 0
