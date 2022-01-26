@@ -571,6 +571,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6608722172583097642, guid: 0074c12871ed1eb469b9460c80fdc523, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 53e1af956fa5e3748aef55e843dee95b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0074c12871ed1eb469b9460c80fdc523, type: 3}
 --- !u!4 &5383149580573221126 stripped
@@ -609,6 +613,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 23.141
       objectReference: {fileID: 0}
+    - target: {fileID: 2189527377343492621, guid: 1688986ca60e2274fbdc2b15b6e24bcd, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 98730b7884f51c84daac95aa72960d91, type: 3}
     - target: {fileID: 3417344820171658045, guid: 1688986ca60e2274fbdc2b15b6e24bcd, type: 3}
       propertyPath: m_Name
       value: CaprazDortlu 1 (2)
@@ -671,6 +679,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8218594249800336252}
     m_Modifications:
+    - target: {fileID: 2189527377343492621, guid: 1688986ca60e2274fbdc2b15b6e24bcd, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 98730b7884f51c84daac95aa72960d91, type: 3}
     - target: {fileID: 3417344820171658045, guid: 1688986ca60e2274fbdc2b15b6e24bcd, type: 3}
       propertyPath: m_Name
       value: CaprazDortlu 1 (1)
@@ -733,6 +745,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8218594249800336252}
     m_Modifications:
+    - target: {fileID: 2189527377343492621, guid: 1688986ca60e2274fbdc2b15b6e24bcd, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 98730b7884f51c84daac95aa72960d91, type: 3}
     - target: {fileID: 3417344820171658045, guid: 1688986ca60e2274fbdc2b15b6e24bcd, type: 3}
       propertyPath: m_Name
       value: CaprazDortlu 1

@@ -564,6 +564,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 2.502
       objectReference: {fileID: 0}
+    - target: {fileID: 2189527377343492621, guid: 1688986ca60e2274fbdc2b15b6e24bcd, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 98730b7884f51c84daac95aa72960d91, type: 3}
     - target: {fileID: 3417344820171658045, guid: 1688986ca60e2274fbdc2b15b6e24bcd, type: 3}
       propertyPath: m_Name
       value: CaprazDortlu 1
@@ -2891,6 +2895,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5873563260498739954}
     m_Modifications:
+    - target: {fileID: 2189527377343492621, guid: 1688986ca60e2274fbdc2b15b6e24bcd, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 98730b7884f51c84daac95aa72960d91, type: 3}
     - target: {fileID: 3417344820171658045, guid: 1688986ca60e2274fbdc2b15b6e24bcd, type: 3}
       propertyPath: m_Name
       value: CaprazDortlu 1 (1)
