@@ -24,7 +24,8 @@ public class GameManager : MonoBehaviour
     public void IncreaseScore()
 	{
         score += 10;
-        UIController.instance.SetScoreText();
+      //  PlayerPrefs.SetInt("total", 10 + PlayerPrefs.GetInt("total"));
+       // UIController.instance.SetScoreText();
     }
 
     public void DecreaseScore()
@@ -32,7 +33,8 @@ public class GameManager : MonoBehaviour
         if(score >= 10)
 		{
             score -= 10;
-            UIController.instance.SetScoreText();
+           // PlayerPrefs.SetInt("total", PlayerPrefs.GetInt("total")-10);
+           // UIController.instance.SetScoreText();
         }
         
     }

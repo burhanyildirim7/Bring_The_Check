@@ -70,7 +70,7 @@ public class UIController : MonoBehaviour
 
 	public void SetScoreText()
 	{
-		gamePlayScoreText.text = GameManager.instance.score.ToString();
+		gamePlayScoreText.text = PlayerPrefs.GetInt("total").ToString();
 	}
 
 	public void SetTotalScoreText()
@@ -81,6 +81,7 @@ public class UIController : MonoBehaviour
 	public void WinScreenScore()
 	{
 		winScreenScoreText.text = GameManager.instance.score.ToString();
+		//winScreenScoreText.text = PlayerPrefs.GetInt("total").ToString();
 	}
 
 	public void ActivateWinScreen()

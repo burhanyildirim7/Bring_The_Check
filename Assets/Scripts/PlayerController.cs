@@ -137,7 +137,7 @@ public class PlayerController : MonoBehaviour
         GameManager.instance.isContinue = false;
         GameManager.instance.score = 0;
         UIController.instance.playerSlider.value = 0;
-        UIController.instance.gamePlayScoreText.text = "0";
+        UIController.instance.gamePlayScoreText.text = PlayerPrefs.GetInt("total").ToString();
         isFinalCube = false;
         ticketMat.SetTextureOffset("_MainTex", Vector2.zero);
         ticketMat.color = new Color(.5f, .5f, .5f);
