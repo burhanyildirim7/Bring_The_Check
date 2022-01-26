@@ -2453,7 +2453,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10035
+  m_Text: 0
 --- !u!1 &2037673476886218186
 GameObject:
   m_ObjectHideFlags: 0
@@ -4320,6 +4320,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5560375540649199625, guid: 102535ac8db6f0841a6f2316c060183d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921369798482571581, guid: 102535ac8db6f0841a6f2316c060183d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921369798482571581, guid: 102535ac8db6f0841a6f2316c060183d, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

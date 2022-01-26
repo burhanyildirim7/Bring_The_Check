@@ -66,11 +66,19 @@ public class PlayerController : MonoBehaviour
                 gidenParaAnim.SetTrigger("giden");
                 StopCoroutine(UIController.instance.SliderIncrease());
                 StartCoroutine(UIController.instance.SliderDecrease());
+                PlayerHitAnim();
+            }
+            else if(UIController.instance.playerSlider.value <= 0)
+			{
+                GameManager.instance.isContinue = false;
+                Debug.Log("çaðrýldý");
+                StartCoroutine(FallFinishEvents());
+                GetComponent<Collider>().enabled = false;
             }
             GameObject effect = Instantiate(paraEfekti);
             effect.transform.SetParent(transform);
             effect.transform.localPosition = new Vector3(0, 1.2f, 0);
-            PlayerHitAnim();
+           
         }
         else if (other.CompareTag("Finish"))
         {
@@ -87,7 +95,8 @@ public class PlayerController : MonoBehaviour
             else
             {
                 // BASARILI DEGILSE...
-                UIController.instance.ActivateLooseScreen();
+                FinishEvents();
+               
             }
 
         }
@@ -96,6 +105,7 @@ public class PlayerController : MonoBehaviour
 
     public void PlayerHitAnim()
     {
+
         playerAnimator.ResetTrigger("idle");
         playerAnimator.ResetTrigger("idleFixedArm");
         playerAnimator.ResetTrigger("skate");
@@ -104,6 +114,7 @@ public class PlayerController : MonoBehaviour
 
     public void PlayerSkateAnim()
     {
+        playerAnimator.ResetTrigger("start");
         playerAnimator.ResetTrigger("hit");
         playerAnimator.ResetTrigger("idle");
         playerAnimator.ResetTrigger("idleFixedArm");
@@ -112,6 +123,7 @@ public class PlayerController : MonoBehaviour
 
     public void PlayerIdleAnim()
     {
+
         playerAnimator.ResetTrigger("hit");
         playerAnimator.ResetTrigger("skate");
         playerAnimator.ResetTrigger("idleFixedArm");
@@ -128,6 +140,7 @@ public class PlayerController : MonoBehaviour
 
     public void StartingEvents()
     {
+        
         PlayerIdleAnim();
         transform.parent.transform.rotation = Quaternion.Euler(0, 0, 0);
         transform.parent.transform.position = Vector3.zero;
@@ -144,7 +157,7 @@ public class PlayerController : MonoBehaviour
         finalTicketPacket.transform.position = new Vector3(0, 0, -2f);
         ticketCylinder.transform.localScale = new Vector3(1.5f, 0.45f, 1.5f);
         transform.position = new Vector3(0, transform.position.y, 0);
-
+        GetComponent<Collider>().enabled = true;
 
     }
 
@@ -202,6 +215,16 @@ public class PlayerController : MonoBehaviour
         GameManager.instance.FinalScoreMultiply();
         UIController.instance.ActivateWinScreen();
     }
+
+    IEnumerator FallFinishEvents()
+	{
+        playerAnimator.SetTrigger("fall");
+        yield return new WaitForSeconds(2f);
+        playerAnimator.ResetTrigger("fall");
+        playerAnimator.SetTrigger("start");
+        FinishEvents();
+    }
+    
 
     IEnumerator ActivateCollider(GameObject obj)
     {
