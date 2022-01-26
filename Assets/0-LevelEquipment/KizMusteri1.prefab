@@ -243,7 +243,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 469620038149239900, guid: 1d46a03fc18314633a37d66565e9d6fd, type: 3}
+  - {fileID: 2100000, guid: 46dc4cf329ab18c4e9ac905e949f3184, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1021,6 +1021,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4522051451954052206}
   - component: {fileID: 7894103307085087775}
+  - component: {fileID: 3791730041180108328}
   m_Layer: 0
   m_Name: KizMusteri1
   m_TagString: musteri
@@ -1058,6 +1059,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.3982034, y: 2.6996548, z: 0.52963066}
   m_Center: {x: -0.074415445, y: 0.8498272, z: 0.09176885}
+--- !u!95 &3791730041180108328
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3857998812240078548}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 25e65e8081af1704ba51806977ffc3c2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3873987834526260765
 GameObject:
   m_ObjectHideFlags: 0
