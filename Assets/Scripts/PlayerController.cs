@@ -68,17 +68,17 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(UIController.instance.SliderDecrease());
                 PlayerHitAnim();
             }
-            else if(UIController.instance.playerSlider.value <= 0)
-			{
+            else if (UIController.instance.playerSlider.value <= 0)
+            {
                 GameManager.instance.isContinue = false;
-                Debug.Log("çaðrýldý");
+                Debug.Log("?a?r?ld?");
                 StartCoroutine(FallFinishEvents());
                 GetComponent<Collider>().enabled = false;
             }
             GameObject effect = Instantiate(paraEfekti);
             effect.transform.SetParent(transform);
             effect.transform.localPosition = new Vector3(0, 1.2f, 0);
-           
+
         }
         else if (other.CompareTag("Finish"))
         {
@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
             {
                 // BASARILI DEGILSE...
                 FinishEvents();
-               
+
             }
 
         }
@@ -123,7 +123,7 @@ public class PlayerController : MonoBehaviour
 
     public void PlayerIdleAnim()
     {
-
+        playerAnimator.ResetTrigger("fall");
         playerAnimator.ResetTrigger("hit");
         playerAnimator.ResetTrigger("skate");
         playerAnimator.ResetTrigger("idleFixedArm");
@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour
 
     public void StartingEvents()
     {
-        
+
         PlayerIdleAnim();
         transform.parent.transform.rotation = Quaternion.Euler(0, 0, 0);
         transform.parent.transform.position = Vector3.zero;
@@ -217,14 +217,14 @@ public class PlayerController : MonoBehaviour
     }
 
     IEnumerator FallFinishEvents()
-	{
+    {
         playerAnimator.SetTrigger("fall");
         yield return new WaitForSeconds(2f);
-        playerAnimator.ResetTrigger("fall");
-        playerAnimator.SetTrigger("start");
+        //playerAnimator.ResetTrigger("fall");
+        //playerAnimator.SetTrigger("start");
         FinishEvents();
     }
-    
+
 
     IEnumerator ActivateCollider(GameObject obj)
     {
